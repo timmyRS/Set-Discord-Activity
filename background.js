@@ -9,7 +9,8 @@ const resetActivity=()=>{
 			details:"",
 			state:"",
 			partycur:"",
-			partymax:""
+			partymax:"",
+                        timestamps:""
 		})
 	}
 }

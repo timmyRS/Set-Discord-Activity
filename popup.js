@@ -88,17 +88,19 @@ document.getElementById("type").onchange=()=>{
 		document.getElementById("type").style.width="399px"
 		document.getElementById("name").style.display="none"
 		document.getElementById("details").style.display="none"
+		document.getElementById("timestamps").style.display="none"
 	}
 	else
 	{
 		document.getElementById("type").style.width=""
 		document.getElementById("name").style.display="inline-block"
 		document.getElementById("details").style.display="inline-block"
+		document.getElementById("timestamps").style.display="inline-block"
 	}
 }
 
 //Query and display current settings
-chrome.storage.local.get(["source","type","name","streamurl","details","state","partycur","partymax"],result=>{
+chrome.storage.local.get(["source","type","name","streamurl","details","state","partycur","partymax", "timestamps"],result=>{
 	if(result.source)
 	{
 		document.querySelector("#source [value='"+result.source+"']").setAttribute("selected","selected")
@@ -133,6 +135,10 @@ chrome.storage.local.get(["source","type","name","streamurl","details","state","
 	{
 		document.getElementById("partymax").value=result.partymax
 	}
+	if(result.timestamps) 
+	{
+	    document.getElementById("timestamps").value=result.timestamps
+	}
 })
 document.getElementById("streamurl").onchange=()=>{
 	document.getElementById("streamurl").value=document.getElementById("streamurl").value.replace("www.twitch.tv","twitch.tv")
@@ -153,7 +159,8 @@ document.getElementById("updatebtn").onclick=()=>{
 				details:document.getElementById("details").value,
 				state:document.getElementById("state").value,
 				partycur:document.getElementById("partycur").value,
-				partymax:document.getElementById("partymax").value
+				partymax:document.getElementById("partymax").value,
+				timestamps:document.getElementById("timestamps").value
 			},()=>document.getElementById("updatebtn").removeAttribute("disabled"))
 		}
 		else

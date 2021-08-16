@@ -42,6 +42,13 @@ button
 	color: white;
 }
 
+#timestamps 
+{
+    border: 5px solid #7289DA;
+	background: #7289DA;
+	color: white;
+}
+
 input[type="number"]
 {
 	width: 32px;
