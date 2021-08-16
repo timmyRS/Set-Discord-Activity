@@ -30,6 +30,7 @@
 				<option value="1" data-message="activityTypeStreaming"></option>
 				<option value="2" data-message="activityTypeListening"></option>
 				<option value="3" data-message="activityTypeWatching"></option>
+				<option value="5" data-message="activityTypeCompetingIn"></option>
 				<option value="4" data-message="activityTypeCustomStatus"></option>
 			</select>
 			<input type="text" id="name">
@@ -39,7 +40,13 @@
 				<input type="number" id="partycur" placeholder="6">
 				/
 				<input type="number" id="partymax" placeholder="10">
+				
 			</div>
+			Timestamps
+				<select name="timestamps" id="timestamps">
+				    <option value="true">On</option>
+				    <option value="">Off</option>
+				</select>
 			<input type="text" id="streamurl" value="https://twitch.tv/settings" data-placeholder="activityStreamURL">
 			<p id="streamnote" data-message="hintTwitchOnly"></p>
 		</div>
